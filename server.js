@@ -2,14 +2,12 @@ import express from 'express';
 
 
 const app = express();
-// const PORT = process.env.PORT || 3000;
-const PORT = 5999;
 
 app.use(express.json());
 
-app.get('/hola', (req, res) => {
-  console.log("obtner token",window.location.hash);
-  res.redirect("scribaldo://scribaldogame");
+app.get('/GetCode', (req, res) => {
+  const code = req.query.code;
+  res.redirect(`scribaldo://scribaldogame?code=${code}`);
 });
 
 // 404
@@ -24,5 +22,9 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(process.env.PORT, () => {
-  console.log(`Servidor escuchando en http://localhost:${PORT}`);
+  console.log(`Servidor escuchando en ${PORT}`);
   });
+
+// app.listen(8089, () => {
+//   console.log(`Servidor escuchando en http://localhost:${PORT}`);
+//   });
