@@ -9,7 +9,7 @@ app.use(express.json());
 
 app.get('/hola', (req, res) => {
     console.log("fdsffddfsfsd");
-  res.redirect("scribe://scribaldo");
+  res.redirect("scribaldo://scribaldogame");
 });
 
 // 404
