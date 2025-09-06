@@ -8,6 +8,7 @@ const PORT = 5999;
 app.use(express.json());
 
 app.get('/hola', (req, res) => {
+  console.log(req.baseUrl);
   res.redirect("scribaldo://scribaldogame");
 });
 
@@ -24,4 +25,4 @@ app.use((err, req, res, next) => {
 
 app.listen(process.env.PORT, () => {
   console.log(`Servidor escuchando en http://localhost:${PORT}`);
-});
+  });
