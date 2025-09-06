@@ -8,7 +8,7 @@ const PORT = 5999;
 app.use(express.json());
 
 app.get('/hola', (req, res) => {
-  console.log(req.baseUrl);
+  console.log("obtner token",req.query.access_token);
   res.redirect("scribaldo://scribaldogame");
 });
 
