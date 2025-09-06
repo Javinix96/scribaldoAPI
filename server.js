@@ -8,7 +8,6 @@ const PORT = 5999;
 app.use(express.json());
 
 app.get('/hola', (req, res) => {
-    console.log("fdsffddfsfsd");
   res.redirect("scribaldo://scribaldogame");
 });
 
