@@ -22,7 +22,7 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(process.env.PORT, () => {
-  console.log(`Servidor escuchando en ${PORT}`);
+  console.log(`Servidor escuchando en ${process.env.PORT}`);
   });
 
 // app.listen(8089, () => {
