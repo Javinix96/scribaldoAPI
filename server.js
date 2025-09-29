@@ -12,7 +12,7 @@ app.get("/GetCode", (req, res) => {
 });
 
 app.get("/Users", async (req, res) => {
-  console.log("hola: " + process.env.DATABASE_URL);
+  console.log("hola2: " + process.env.DATABASE_URL);
   res.json(await Users.getUsers());
 });
 

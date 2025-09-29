@@ -3,7 +3,9 @@ import postgres from "postgres";
 
 const connectionString = process.env.DATABASE_URL;
 // "postgresql://postgres:FksNA86Jm3KppEy9@db.feflkuqdrbwwpmggtgoe.supabase.co:5432/postgres";
-const pool = postgres(connectionString);
+const pool = postgres(connectionString, {
+  ssl: "require",
+});
 
 export default pool;
 
