@@ -16,7 +16,7 @@ const pool = new Pool({
   // connectionString: process.env.DATABASE_URL,
   // ssl: { rejectUnauthorized: false },
   host: "db.feflkuqdrbwwpmggtgoe.supabase.co",
-  port: 5432,
+  port: 6543,
   user: "postgres",
   password: "FksNA86Jm3KppEy9",
   database: "postgres",
