@@ -13,34 +13,34 @@ app.get("/Users", async (req, res) => {
   res.json(await Users.getUsers());
 });
 
-app.get("/GetUser", async (req, res) => {
-  const { name, score } = req.query;
+// app.get("/GetUser", async (req, res) => {
+//   const { name, score } = req.query;
 
-  res.json(await Users.getUser(name));
-});
+//   res.json(await Users.getUser(name));
+// });
 
-app.post("/AddUser", async (req, res) => {
-  const { username, email, password, state, date, provider, provider_id } =
-    req.body;
+// app.post("/AddUser", async (req, res) => {
+//   const { username, email, password, state, date, provider, provider_id } =
+//     req.body;
 
-  const response = await Users.AddUser(
-    username,
-    email,
-    password,
-    state,
-    date,
-    provider,
-    provider_id
-  );
-  res.status(200).send(response);
-});
+//   const response = await Users.AddUser(
+//     username,
+//     email,
+//     password,
+//     state,
+//     date,
+//     provider,
+//     provider_id
+//   );
+//   res.status(200).send(response);
+// });
 
-app.post("/Login", async (req, res) => {
-  const { username, password } = req.body;
+// app.post("/Login", async (req, res) => {
+//   const { username, password } = req.body;
 
-  const response = await Users.GetLogin(username, password);
-  res.status(200).send(response);
-});
+//   const response = await Users.GetLogin(username, password);
+//   res.status(200).send(response);
+// });
 
 app.use((req, res) => {
   res.status(404).json({ error: "Ruta no encontrada" });
