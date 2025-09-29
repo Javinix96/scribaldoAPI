@@ -4,6 +4,8 @@ import Users from "./UserClass.js";
 const app = express();
 app.use(express.json());
 
+const port = process.env.PORT || 3000;
+
 app.get("/GetCode", (req, res) => {
   const code = req.query.code;
   res.redirect(`scribaldo://scribaldogame?code=${code}`);
@@ -52,8 +54,8 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: "Error del servidor" });
 });
 
-app.listen(process.env.PORT, () => {
-  console.log(`Servidor escuchando en ${process.env.PORT}`);
+app.listen(port, () => {
+  console.log(`Servidor escuchando en ${port}`);
 });
 
 // app.listen(8089, () => {
