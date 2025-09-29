@@ -5,12 +5,13 @@ import bcrypt from "bcrypt";
 const getUsers = async () => {
   let players = {};
   try {
-    const result =
-      await pool`SELECT a.username,a.email, b.state FROM users a left outer join states b on a.id_state = b.id_estado;`;
+    const result = await pool.query(
+      `SELECT a.username,a.email, b.state FROM users a left outer join states b on a.id_state = b.id_estado;`
+    );
 
-    for (let i = 0; i < result.length; i++) {
+    for (let i = 0; i < result.rows.length; i++) {
       players = {
-        values: [...result],
+        values: [...result.rows],
       };
     }
   } catch (err) {
