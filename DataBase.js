@@ -13,13 +13,14 @@ import pkg from "pg";
 const { Pool } = pkg;
 
 const pool = new Pool({
-  // connectionString: process.env.DATABASE_URL,
+  connectionString: process.env.DATABASE_URL,
   // ssl: { rejectUnauthorized: false },
-  host: "db.feflkuqdrbwwpmggtgoe.supabase.co",
+  host: "aws-1-us-east-2.pooler.supabase.com",
   port: 6543,
-  user: "postgres",
+  user: "postgres.feflkuqdrbwwpmggtgoe",
   password: "FksNA86Jm3KppEy9",
   database: "postgres",
+  pool_mode: "transaction",
   ssl: {
     rejectUnauthorized: false, // Necesario para Supabase
   },
