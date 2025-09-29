@@ -5,7 +5,7 @@ const connectionString = process.env.DATABASE_URL;
 // "postgresql://postgres:FksNA86Jm3KppEy9@db.feflkuqdrbwwpmggtgoe.supabase.co:5432/postgres";
 const pool = postgres(connectionString, {
   ssl: "require",
-  host: "db.feflkuqdrbwwpmggtgoe.supabase.co",
+  // host: "db.feflkuqdrbwwpmggtgoe.supabase.co",
 });
 
 export default pool;
