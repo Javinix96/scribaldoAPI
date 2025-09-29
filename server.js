@@ -10,6 +10,7 @@ app.get("/GetCode", (req, res) => {
 });
 
 app.get("/Users", async (req, res) => {
+  console.log(process.env.DATABASE_URL);
   res.json(await Users.getUsers());
 });
 
