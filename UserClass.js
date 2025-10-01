@@ -88,12 +88,11 @@ const PostLogin = async (nameOrEmail, password, provider) => {
     return response;
   }
 
-  const isValidPassword = await bcrypt.compare(
-    password,
-    result.rows[0].password
-  );
-
   if (provider === "LOCAL") {
+    const isValidPassword = await bcrypt.compare(
+      password,
+      result.rows[0].password
+    );
     if (!isValidPassword) {
       response = {
         error: "Contraseña incorrecta",
