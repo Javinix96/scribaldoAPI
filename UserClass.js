@@ -66,17 +66,17 @@ const PostLogin = async (nameOrEmail, password, provider) => {
   }
 
   values.push(nameOrEmail);
-  values.push(provider);
 
   let query =
-    "SELECT username, email, password FROM users  where LOWER(username) =" +
+    "SELECT username, email, password FROM users  where ( LOWER(username) =" +
     "LOWER($" +
     values.length +
     ") OR LOWER(email) = LOWER($" +
     values.length +
-    ") AND provider = " +
-    values.length +
-    ";";
+    ") )";
+
+  values.push(provider);
+  query += "AND provider = $" + values.length + ";";
 
   const result = await pool.query(query, values);
 
