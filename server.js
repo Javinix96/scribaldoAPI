@@ -54,10 +54,10 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: "Error del servidor" });
 });
 
-// app.listen(port, () => {
-//   console.log(`Servidor escuchando en ${port}`);
-// });
-
-app.listen(8089, () => {
-  console.log(`Servidor escuchando en http://localhost:${8089}`);
+app.listen(port, () => {
+  console.log(`Servidor escuchando en ${port}`);
 });
+
+// app.listen(8089, () => {
+//   console.log(`Servidor escuchando en http://localhost:${8089}`);
+// });
