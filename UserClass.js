@@ -57,7 +57,7 @@ const PostLogin = async (nameOrEmail, password, provider) => {
     return response;
   }
 
-  if (!password) {
+  if (!password && provider !== "GOOGLE") {
     response = {
       error: "Ingrese contraseña",
       success: false,
@@ -93,12 +93,14 @@ const PostLogin = async (nameOrEmail, password, provider) => {
     result.rows[0].password
   );
 
-  if (!isValidPassword) {
-    response = {
-      error: "Contraseña incorrecta",
-      success: false,
-    };
-    return response;
+  if (provider === "LOCAL") {
+    if (!isValidPassword) {
+      response = {
+        error: "Contraseña incorrecta",
+        success: false,
+      };
+      return response;
+    }
   }
 
   let users = {
