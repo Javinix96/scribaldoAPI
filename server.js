@@ -39,9 +39,9 @@ app.post("/AddUser", async (req, res) => {
 });
 
 app.post("/Login", async (req, res) => {
-  const { username, password } = req.body;
+  const { username, password, provider } = req.body;
 
-  const response = await Users.GetLogin(username, password);
+  const response = await Users.PostLogin(username, password, provider);
   res.status(200).send(response);
 });
 

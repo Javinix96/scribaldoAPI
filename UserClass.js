@@ -45,7 +45,7 @@ const getUser = async (name) => {
   }
 };
 
-const GetLogin = async (nameOrEmail, password) => {
+const PostLogin = async (nameOrEmail, password, provider) => {
   let values = [];
   let response = {};
 
@@ -73,7 +73,9 @@ const GetLogin = async (nameOrEmail, password) => {
     values.length +
     ") OR LOWER(email) = LOWER($" +
     values.length +
-    ");";
+    ") AND provider = " +
+    provider +
+    ";";
 
   const result = await pool.query(query, values);
 
@@ -196,7 +198,7 @@ const Users = {
   getUsers,
   getUser,
   AddUser,
-  GetLogin,
+  PostLogin,
 };
 
 export default Users;
